@@ -16,8 +16,8 @@ A React-based expense splitter app that helps you split bills with friends and r
 
 - **Frontend:** React 18 + Vite
 - **Styling:** Pure CSS with gradient theme
-- **Container:** Multi-stage Dockerfile (Node build → Nginx serve, ~50MB final image)
-- **Web Server:** Nginx (with SPA routing support)
+- **Container:** Multi-stage Dockerfile 
+- **Web Server:** Nginx 
 
 ## Cloud Architecture
 
@@ -33,27 +33,7 @@ A React-based expense splitter app that helps you split bills with friends and r
 3. PR approved + merged to `main` → Pipeline auto-builds image
 4. Image pushed to ACR with tag `$(Build.BuildId)` + `latest`
 5. Pipeline deploys image to Azure Web App
-6. App live at https://&lt;webapp-name&gt;.azurewebsites.net
-
-## Local Development Setup (Optional)
-
-If you have Node.js installed:
-
-```bash
-npm install
-npm run dev
-```
-
-Open http://localhost:5173
-
-If you have Docker installed:
-
-```bash
-docker build -t splitmate .
-docker run -p 8080:80 splitmate
-```
-
-Open http://localhost:8080
+6. App live 
 
 ## Project Structure
 
@@ -76,7 +56,6 @@ splitmate/
 ## Branch Strategy
 
 - `main` — production-ready code, auto-deploys to Azure Web App
-- `develop` — integration branch, builds but doesn't deploy
 - `feature/*` — short-lived branches for new work
 
 ## Branch Policies (main)
